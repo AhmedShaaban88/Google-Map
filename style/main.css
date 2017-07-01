@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: monospace;  
+}
+
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    box-shadow: 1px 1px 2px 0px #dad4d4;
+    z-index: 3;
+    background-color: #3c3a3a;
+    position: fixed;
+}
+
+header > div{
+    display: block;
+    position: relative;
+    top: 35%;
+    cursor: pointer;
+    height: 30px;
+}
+
+.hamborge{
+    position: absolute;
+    border: 1px solid cyan;
+    width: 25px;
+    left: 2%;
+}
+
+.hamborge:nth-child(2){
+    margin-top: 10px;
+}
+
+.hamborge:last-child{
+    margin-top: 20px;
+}
+
+li{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: cadetblue;
+}
+
+#off-canvas{
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    position: fixed;
+    height: 100%;
+    width: 25%;
+    background-color: #3c3a3a;
+    left: -100%;
+    top: 100px;
+    z-index: 9999;
+}
+
+#location{
+    text-align: center;
+    color: #e0dbdb;
+    font-family: monospace;
+}
+
+#off-canvas input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 2%;
+}
+
+#map{
+    height: 800px;
+    width: 100%;
+    
+}
+
+@media screen and (max-width:600px){
+    #off-canvas{
+        width: 100%;
+    }
+}

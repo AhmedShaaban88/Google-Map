@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Map Project</title>
+    <meta charset="utf-8">
+    <meta name="application-name" content="Map Project for udacity nanodegree">
+    <link rel="stylesheet" href="style/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header>
+        <div title="open canvas" id="hamborge--icon">
+            <span class="hamborge"></span>
+            <span class="hamborge"></span>
+            <span class="hamborge"></span>
+        </div>
+    </header>
+    <aside id="off-canvas">
+        <h2 id="location">Locations</h2>
+        <div>
+            <input type="search" placeholder="Enter Place" autocomplete="on" autofocus data-bind="textInput: search, valueUpdate: 'afterkeydown'"
+            />
+            <ul data-bind="foreach: filteredList">
+                <li data-bind="text: name, click: bounce"></li>
+            </ul>
+        </div>
+    </aside>
+    <div id="map"></div>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEJa-rCWBwx7HTSsfu1sYLkbwlGMCWoCE&v=3&callback=initMap"
+        onerror="errorHandle()">
+
+        </script>
+</body>
+
+</html>

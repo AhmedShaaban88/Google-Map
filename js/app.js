@@ -9,6 +9,7 @@ document.getElementById("hamborge--icon").addEventListener("click", function() {
         offCanvas.style.left = -100 + "%";
         this.title = "Open Canvas";
     }
+    document.getElementById("hamborge--icon").classList.toggle("change");
 });
 
 //all my locations that's will display 
@@ -65,17 +66,12 @@ var Location = function(Item) {
     $.getJSON(APIURL, function(result) {
         $.each(result, function() {
             var results = result.response.venues[0];
-            if (results === undefined || !results) {
-                alert("there is some error to fetch data. please refresh page and try again");
-            }
-            else{
+            if(results !== undefined && !results) {
                 self.street = results.location.formattedAddress[0] || "Unavailable";
                 self.city = results.location.formattedAddress[1] || "Unavailable";
             }
             
         });
-    }).fail(function() {
-        alert("There was an error with the Foursquare API.");
     });
     this.content = '<div><div><b>' + self.name + "</b><br/></div>" +
         '<span>' + self.street + "</span><br>" +
